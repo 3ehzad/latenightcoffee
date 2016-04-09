@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>رادیـو قهـوه آخـر شب</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-rtl/3.2.0-rc2/css/bootstrap-rtl.min.css" type="text/css">
+
+    <!-- Custom Fonts -->
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css" type="text/css">
+
+    <!-- Plugin CSS -->
+    <link rel="stylesheet" href="css/animate.min.css" type="text/css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/creative.css" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <!-- player javascript -->
+  
+   <script src="js/wavesurfer.js"></script>
+   
+
+</head>
+
+<body id="page-top">
+
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Menu</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top"><img src="img/logo-min.png" title="رادیو قهوه آخر شب" alt="رادیو قهـوه آخر شب"/></a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a class="page-scroll" href="#about">دربـاره</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#portfolio">اپیـزودها</a>
+                    </li>
+					<li>
+                        <a class="page-scroll" href="https://www.payping.ir/d/f5C8">حمایت</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#contact">ارتباط</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <header>
+        <div class="header-content">
+            <div class="header-content-inner">
+                <h1>رادیـو قهـوه آخـر شب</h1>
+                <hr>
+				<div id="waveform" style="direction:ltr !important;">
+				
+					<script>
+						var wavesurfer = WaveSurfer.create({
+							container: '#waveform',
+							waveColor: '#cccccc',
+							progressColor: '#ee4b28',
+							backend: 'MediaElement',
+							height: '100'
+						});
+
+							 wavesurfer.on('ready', function () {
+							//	 wavesurfer.play();
+							 });
+						 wavesurfer.load('episodes/s03no03.mp3');
+						 //wavesurfer.load('songs/teaser.mp3');
+					</script>
+				</div>
+				<br />
+                <button class="btn btn-primary btn-xl" onclick="wavesurfer.playPause()"><i class="fa fa-play fa-2x wow bounceIn"></i></button>
+				<a class="btn btn-primary btn-xl" href="episodes/s03no03-128kb.mp3"><i class="fa fa-download fa-2x wow bounceIn"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <section class="bg-primary" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <h2 class="section-heading">رادیـو قهـوه آخـر شب</h2>
+                    <hr class="light">
+                    <p class="text-faded">قهوه آخر شب مجالى است براى خلوت، براى فراغت، براى فكر نكردن به اونچه نميشه بهش فكر نكرد...
+مجالى براى اينكه يك فنجون چاى يا قهوه آخر شبتون رو كنارتون داشته باشيد و يك فنجون قهوه آخر شب هم توى هدفون توى گوشتون و براى چند دقيقه جدا بشيد از دغدغه هاي روزمره... شده حتی يك لبخند بياد روى لبتون يا حتى يك قطره اشك تو چشمتون...</p>
+                    <a href="http://telegram.me/latenightcoffee" class="btn btn-default btn-xl"><i class="fa fa-send wow bounceIn"></i> کانال تلگرام</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="no-padding" id="portfolio">
+        <div class="container-fluid">
+            <div class="row no-gutter" style=" margin-bottom: -8px; margin-top: 5px;">
+
+			<!-- SnapWidget -->
+<script src="http://snapwidget.com/js/snapwidget.js"></script>
+<iframe src="http://snapwidget.com/in/?u=bGF0ZW5pZ2h0Y29mZmVlLmlyfGlufDE1MHw1fDF8fG5vfDV8ZmFkZU91dHxvblN0YXJ0fHllc3x5ZXM=&ve=170316" title="Instagram Widget" class="snapwidget-widget" allowTransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden; width:100%;"></iframe>
+			
+            </div>
+        </div>
+    </section>
+
+    <aside class="bg-dark">
+        <div class="container text-center">
+            <div class="call-to-action">
+				  <img width="150px" src="logo.png"><br /><br /><br />
+                <h2>اپیـزودهای قهوه آخر شب را به رایگان در کانال تلگرام گوش کنید!</h2>
+                <a href="http://telegram.me/latenightcoffee" class="btn btn-default btn-xl wow tada"><i class="fa fa-send wow bounceIn"></i> کانال تلگرام</a>
+				<a href="https://www.payping.ir/d/f5C8" class="btn btn-primary" target="_blank" base_url="https://www.payping.ir" ><i class="fa fa-heart wow bounceIn"></i> حمایت مالی</a>
+            </div>
+        </div>
+    </aside>
+
+    <section id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <h2 class="section-heading">راه های ارتباطی</h2>
+                    <hr class="primary">
+                    <p>قهـوه آخـر شب را در تلگرام، اینستاگرم و ساندکلاد دنبال کنید و به دوستان خود معرفی کنید.</p>
+                </div>
+                <div class="col-lg-3  text-center">
+                    <i class="fa fa-send fa-3x wow bounceIn"></i>
+                    <p><a href="http://telegram.me/latenightcoffee">latenightcoffee@</a></p>
+                </div>
+                <div class="col-lg-3  text-center">
+                    <i class="fa fa-instagram fa-3x wow bounceIn"></i>
+                    <p><a href="http://instagram.com/latenightcoffee.ir">latenightcoffee.ir@</a></p>
+                </div>
+                <div class="col-lg-3  text-center">
+                    <i class="fa fa-soundcloud fa-3x wow bounceIn"></i>
+                    <p><a href="http://soundcloud.com/latenightcoffeeradio">latenightcoffeeradio@</a></p>
+                </div>
+                <div class="col-lg-3 text-center">
+                    <i class="fa fa-envelope-o fa-3x wow bounceIn" data-wow-delay=".1s"></i>
+                    <p>info [at] latenightcoffee.ir</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="js/jquery.easing.min.js"></script>
+<script src="js/jquery.fittext.js"></script>
+    <script src="js/wow.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="js/creative.js"></script>
+		
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o)
+            , m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-38132661-3', 'auto');
+    ga('send', 'pageview');
+</script>
+</body>
+
+</html>
