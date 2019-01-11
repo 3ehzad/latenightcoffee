@@ -226,8 +226,8 @@ body {
 .hap-playlist-item > a {
     border: 0;
 }
-.hap-playlist-item:nth-child(odd){
-	background: #fff; 
+.hap-playlist-item:nth-child(odd) {
+    background: #61504a;
 }
 .hap-playlist-item:last-child {  
 	margin-bottom:0px!important;
@@ -438,4 +438,17 @@ body {
 /* scroll */
 .hap-playlist-inner .mCSB_inside > .mCSB_container {
     margin-right: 30px;
+}
+@media (max-width: 600px) {
+	#hap-wrapper {
+		top: 0px;
+	}
+	.hap-bottom-bar {
+		position: fixed;
+		bottom: 0px;
+		top: auto;
+	}
+	.hap-playlist-inner {
+		min-height: 90vh;
+	}
 }
