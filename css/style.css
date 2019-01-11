@@ -8,7 +8,7 @@ a{
 	text-decoration: none; 
 }
 body {
-	background: url("../data/background.jpg") no-repeat center center;
+	background: url("../img/background.jpg") no-repeat center center;
 	-webkit-font-smoothing: subpixel-antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	background-size: cover;
@@ -397,7 +397,7 @@ body {
 	left:50%;
 	margin-left:-16px;
 	margin-top:-15px;
-	background: #111 url('../data/loading.gif') no-repeat center center; 
+	background: #111 url('../img/loading.gif') no-repeat center center; 
 }
 
 
