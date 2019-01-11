@@ -1,205 +1,155 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		    <title>HTML5 Audio Player with Playlist by Tean</title>
+       
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"><!-- icons -->
+    		<link rel="stylesheet" type="text/css" href="css/jquery.mCustomScrollbar.css" media="all" /><!-- playlist scroll -->
+    		<link rel="stylesheet" type="text/css" href="css/hap_metro2.css" />
+        
+        <script type="text/javascript" src="js/jquery-1.12.0.min.js"></script>
+        <script type="text/javascript" src="js/jquery-ui.min.js"></script><!-- drag / sort -->
+        <script type="text/javascript" src="js/jquery.ui.touch-punch.min.js"></script><!-- drag / sort -->    
+        <script type="text/javascript" src="js/jquery.mCustomScrollbar.concat.min.js"></script><!-- playlist scroll -->
+        <script type="text/javascript" src="js/jsmediatags.min.js"></script><!-- id3 tags -->
+        <script type="text/javascript" src="js/new_cb.js"></script>
+        <script type="text/javascript" src="js/new.js"></script>			
+        <script type="text/javascript">
 
-<head>
+            var hap_player;  
+            jQuery(document).ready(function($){
+                
+                var settings = {
+                    instanceName:"metro2",
+                    sourcePath:"",
+                    activePlaylist:"playlist-audio2",
+                    activeItem:0,
+                    volume:0.5,
+                    autoPlay:true,
+                    preload:"auto",
+                    randomPlay:false,
+                    loopingOn:true,
+                    autoAdvanceToNextMedia:true,
+                    youtubeAppId:"",
+                    soundCloudAppId:"",
+                    usePlaylistScroll:true,
+                    playlistScrollOrientation:"vertical",
+                    playlistScrollTheme:"minimal",
+                    useTooltips:true,
+                    useKeyboardNavigationForPlayback:true,
+                    useDownload:false,
+                    autoReuseDownloadMail:true,
+                    useShare:true,
+                    facebookAppId:"",
+                    useNumbersInPlaylist: false,
+                    numberTitleSeparator: ".  ",
+                    artistTitleSeparator: " - ",
+                    sortableTracks: false,
+                    playlistItemContent:"title"
+                };
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+                hap_player = $("#hap-wrapper").hap(settings);
 
-    <title>رادیـو قهـوه آخـر شب</title>
+            });
 
-    <!-- Bootstrap Core CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-rtl/3.2.0-rc2/css/bootstrap-rtl.min.css" type="text/css">
+        </script>
+        
+	</head>
+	<body>
+             
+        <!-- player code -->   
+        <div id="hap-wrapper">
+        
+          <div class="hap-player-thumb"></div>
 
-    <!-- Custom Fonts -->
-    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css" type="text/css">
+       		<div class="hap-player-holder">
+             
+                <div class="hap-player-controls">
+                    <div class="hap-prev-toggle hap-contr-btn"><i class="fa fa-step-backward hap-contr-btn-i hap-icon-color"></i></div>
+                    <div class="hap-playback-toggle hap-contr-btn"><i class="fa fa-play hap-contr-btn-i hap-icon-color"></i></div>
+                    <div class="hap-next-toggle hap-contr-btn"><i class="fa fa-step-forward hap-contr-btn-i hap-icon-color"></i></div>
+                      
+                    <div class="hap-volume-seekbar hap-tooltip-item">
+                         <div class="hap-volume-bg"></div>
+                         <div class="hap-volume-level"><div class="hap-volume-drag"></div></div>
+                    </div>
 
-    <!-- Plugin CSS -->
-    <link rel="stylesheet" href="css/animate.min.css" type="text/css">
-
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/creative.css" type="text/css">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-    <!-- player javascript -->
-
-   <script src="js/wavesurfer.js"></script>
-
-
-</head>
-
-<body id="page-top">
-
-    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
-        <div class="container-fluid">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Menu</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand page-scroll" href="#page-top"><img src="img/logo-min.png" title="رادیو قهوه آخر شب" alt="رادیو قهـوه آخر شب"/></a>
-            </div>
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a class="page-scroll" href="#about">دربـاره</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#portfolio">اپیـزودها</a>
-                    </li>
-					<li>
-                        <a class="page-scroll" href="https://www.payping.ir/d/f5C8">حمایت</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#contact">ارتباط</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container-fluid -->
-    </nav>
-
-    <header>
-        <div class="header-content">
-            <div class="header-content-inner">
-                <h1>رادیـو قهـوه آخـر شب</h1>
-                <hr>
-				<div id="waveform" style="direction:ltr !important;">
-
-					<script>
-						var wavesurfer = WaveSurfer.create({
-							container: '#waveform',
-							waveColor: '#cccccc',
-							progressColor: '#ee4b28',
-							backend: 'MediaElement',
-							height: '100'
-						});
-
-							 wavesurfer.on('ready', function () {
-							//	 wavesurfer.play();
-							 });
-						 wavesurfer.load('episodes/s03no03.mp3');
-						 //wavesurfer.load('songs/teaser.mp3');
-					</script>
-				</div>
-				<br />
-                <button class="btn btn-primary btn-xl" onclick="wavesurfer.playPause()"><i class="fa fa-play fa-2x wow bounceIn"></i></button>
-				<a class="btn btn-primary btn-xl" href="episodes/s03no03-128kb.mp3"><i class="fa fa-download fa-2x wow bounceIn"></i></a>
-            </div>
-        </div>
-    </header>
-
-    <section class="bg-primary" id="about">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <h2 class="section-heading">رادیـو قهـوه آخـر شب</h2>
-                    <hr class="light">
-                    <p class="text-faded">قهوه آخر شب مجالى است براى خلوت، براى فراغت، براى فكر نكردن به اونچه نميشه بهش فكر نكرد...
-مجالى براى اينكه يك فنجون چاى يا قهوه آخر شبتون رو كنارتون داشته باشيد و يك فنجون قهوه آخر شب هم توى هدفون توى گوشتون و براى چند دقيقه جدا بشيد از دغدغه هاي روزمره... شده حتی يك لبخند بياد روى لبتون يا حتى يك قطره اشك تو چشمتون...</p>
-                    <a href="http://telegram.me/latenightcoffee" class="btn btn-default btn-xl"><i class="fa fa-send wow bounceIn"></i> کانال تلگرام</a>
+                    <div class="hap-loop-toggle hap-contr-btn hap-tooltip-item" data-tooltip="Loop"><i class="fa fa-refresh hap-contr-btn-i hap-icon-color"></i></div>
+                    <div class="hap-random-toggle hap-contr-btn hap-tooltip-item" data-tooltip="Shuffle"><i class="fa fa-random hap-contr-btn-i hap-icon-color"></i></div>
                 </div>
+
+                <div class="hap-seekbar-inner hap-tooltip-item">
+                    <div class="hap-progress-bg"></div>
+                    <div class="hap-load-level"></div>
+                    <div class="hap-progress-level"></div>
+                </div>
+                  
             </div>
-        </div>
-    </section>
+              
+            <div class="hap-playlist-holder">
+                <div class="hap-playlist-filter-msg"><p>NOTHING FOUND!</p></div>
+                <div class="hap-playlist-inner">
+                    <div class="hap-playlist-content">
+                     	<!-- playlist items are appended here! --> 
+                    </div>
+                </div>
+                
+                <div class="hap-preloader"></div>
 
-    <section class="no-padding" id="portfolio">
-        <div class="container-fluid">
-            <div class="row no-gutter" style=" margin-bottom: -8px; margin-top: 5px;">
-// TODO: add episodes here for play or download.
-			<!-- SnapWidget -->
-<script src="http://snapwidget.com/js/snapwidget.js"></script>
-<iframe src="http://snapwidget.com/in/?u=bGF0ZW5pZ2h0Y29mZmVlLmlyfGlufDE1MHw1fDF8fG5vfDV8ZmFkZU91dHxvblN0YXJ0fHllc3x5ZXM=&ve=170316" title="Instagram Widget" class="snapwidget-widget" allowTransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden; width:100%;"></iframe>
+                <div class="hap-bottom-bar">
+
+                    <input class="hap-search-filter" type="text" value="filter...">
+                    <div class="hap-sort-alpha hap-tooltip-item" data-tooltip="Alphabetic sort"><i class="fa fa-sort-alpha-desc hap-sr-bar-i hap-icon-color"></i></div>
+
+                    <div class="hap-share-item hap-tooltip-item" data-type="facebook" data-tooltip="Share on Facebook"><i class="fa fa-facebook hap-sr-bar-i hap-icon-color"></i></div>
+                    <div class="hap-share-item hap-tooltip-item" data-type="twitter" data-tooltip="Share on Twitter"><i class="fa fa-twitter hap-sr-bar-i hap-icon-color"></i></div>
+                    <div class="hap-share-item hap-tooltip-item" data-type="tumblr" data-tooltip="Share on Tumblr"><i class="fa fa-tumblr hap-sr-bar-i hap-icon-color"></i></div>
+                    <div class="hap-share-item hap-tooltip-item" data-type="googleplus" data-tooltip="Share on Google+"><i class="fa fa-google-plus hap-sr-bar-i hap-icon-color"></i></div>
+                    
+                </div>
 
             </div>
+
+            <div class="hap-download-confirm"><p>DOWNLOAD STARTED!</p></div>
+
+			<div class="hap-tooltip"><p></p></div>
+        
+        </div>  
+
+        <!-- PLAYLIST LIST -->
+        <div id="hap-playlist-list">
+
+             <ul id="playlist-audio2">
+                 <li class="hap-playlist-item" data-type="audio" data-mp3="media/audio/2/main/01.mp3" data-artist="Soundroll" data-title="A Way To The Top" data-thumb="media/audio/2/hap_thumb2/01.jpg" data-share="http://audiojungle.net/item/a-way-to-the-top/162200?ref=Tean">
+                     <a class="hap-buy" href="#"><i class="fa fa-heart"></i></a>
+                 </li>
+
+                 <li class="hap-playlist-item" data-type="audio" data-mp3="media/audio/2/main/02.mp3" data-artist="Soundroll" data-title="Feel Good Journey" data-thumb="media/audio/2/hap_thumb2/02.jpg" data-share="http://audiojungle.net/item/feel-good-journey/119565?ref=Tean">
+                     <a class="hap-buy" href="#"><i class="fa fa-rss"></i></a>
+                 </li>
+
+                 <li class="hap-playlist-item" data-type="audio" data-mp3="media/audio/2/main/03.mp3" data-artist="Soundroll" data-title="Fight No More" data-thumb="media/audio/2/hap_thumb2/03.jpg" data-share="http://audiojungle.net/item/fight-no-more/143561?ref=Tean">
+                    <a class="hap-buy" href="#"><i class="fa fa-heart"></i></a>
+                    <a class="hap-buy" href="#"><i class="fa fa-rss"></i></a>
+                 </li>
+
+                 <li class="hap-playlist-item" data-type="audio" data-mp3="media/audio/2/main/04.mp3" data-artist="Soundroll" data-title="Funky Boom" data-thumb="media/audio/2/hap_thumb2/04.jpg" data-share="http://audiojungle.net/item/funky-boom/127833?ref=Tean">
+                     <a class="hap-buy" href="#"><i class="fa fa-send"></i></a>
+                 </li>
+
+                 <li class="hap-playlist-item" data-type="audio" data-mp3="media/audio/2/main/05.mp3" data-artist="Soundroll" data-title="Pump The Club" data-thumb="media/audio/2/hap_thumb2/05.jpg" data-share="http://audiojungle.net/item/pump-the-club/166358?ref=Tean"></li>
+
+                 <li class="hap-playlist-item" data-type="audio" data-mp3="media/audio/2/main/06.mp3" data-artist="Soundroll" data-title="Rush" data-thumb="media/audio/2/hap_thumb2/06.jpg" data-share="http://audiojungle.net/item/rush/118500?ref=Tean"></li>
+
+                 <li class="hap-playlist-item" data-type="audio" data-mp3="media/audio/2/main/07.mp3" data-artist="Soundroll" data-title="Sun Is So Bright" data-target="_blank" data-thumb="media/audio/2/hap_thumb2/07.jpg" data-share="http://audiojungle.net/item/sun-is-so-bright/134956?ref=Tean">
+                     <a class="hap-buy" href="#"><i class="fa fa-send"></i></a>
+                 </li>
+             </ul>
+             
         </div>
-    </section>
 
-    <aside class="bg-dark">
-        <div class="container text-center">
-            <div class="call-to-action">
-				  <img width="150px" src="logo.png"><br /><br /><br />
-                <h2>اپیـزودهای قهوه آخر شب را به رایگان در کانال تلگرام گوش کنید!</h2>
-                <a href="http://telegram.me/latenightcoffee" class="btn btn-default btn-xl wow tada"><i class="fa fa-send wow bounceIn"></i> کانال تلگرام</a>
-				<a href="https://www.payping.ir/d/f5C8" class="btn btn-primary" target="_blank" base_url="https://www.payping.ir" ><i class="fa fa-heart wow bounceIn"></i> حمایت مالی</a>
-            </div>
-        </div>
-    </aside>
-
-    <section id="contact">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <h2 class="section-heading">راه های ارتباطی</h2>
-                    <hr class="primary">
-                    <p>قهـوه آخـر شب را در تلگرام، اینستاگرم و ساندکلاد دنبال کنید و به دوستان خود معرفی کنید.</p>
-                </div>
-                <div class="col-lg-3  text-center">
-                    <i class="fa fa-send fa-3x wow bounceIn"></i>
-                    <p><a href="http://telegram.me/latenightcoffee">latenightcoffee@</a></p>
-                </div>
-                <div class="col-lg-3  text-center">
-                    <i class="fa fa-instagram fa-3x wow bounceIn"></i>
-                    <p><a href="http://instagram.com/latenightcoffee.ir">latenightcoffee.ir@</a></p>
-                </div>
-                <div class="col-lg-3  text-center">
-                    <i class="fa fa-soundcloud fa-3x wow bounceIn"></i>
-                    <p><a href="http://soundcloud.com/latenightcoffeeradio">latenightcoffeeradio@</a></p>
-                </div>
-                <div class="col-lg-3 text-center">
-                    <i class="fa fa-envelope-o fa-3x wow bounceIn" data-wow-delay=".1s"></i>
-                    <p>info [at] latenightcoffee.ir</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-
-    <!-- Plugin JavaScript -->
-    <script src="js/jquery.easing.min.js"></script>
-<script src="js/jquery.fittext.js"></script>
-    <script src="js/wow.min.js"></script>
-
-    <!-- Custom Theme JavaScript -->
-    <script src="js/creative.js"></script>
-
-<script>
-    (function (i, s, o, g, r, a, m) {
-        i['GoogleAnalyticsObject'] = r;
-        i[r] = i[r] || function () {
-            (i[r].q = i[r].q || []).push(arguments)
-        }, i[r].l = 1 * new Date();
-        a = s.createElement(o)
-            , m = s.getElementsByTagName(o)[0];
-        a.async = 1;
-        a.src = g;
-        m.parentNode.insertBefore(a, m)
-    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-
-    ga('create', 'UA-38132661-3', 'auto');
-    ga('send', 'pageview');
-</script>
-</body>
-
+		
+	</body>
 </html>
