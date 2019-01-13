@@ -443,12 +443,22 @@ body {
 	#hap-wrapper {
 		top: 0px;
 	}
+	.hap-player-thumb {
+		top: 33px;
+	}
+	.hap-playlist-holder {
+		top: 33px;
+	}
 	.hap-bottom-bar {
 		position: fixed;
-		bottom: 0px;
-		top: auto;
+		top: 0;
 	}
 	.hap-playlist-inner {
 		min-height: 90vh;
+	}
+	.hap-player-holder {
+		position: fixed;
+		z-index: 99;
+		bottom: 0;
 	}
 }
