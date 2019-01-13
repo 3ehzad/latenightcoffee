@@ -233,14 +233,14 @@ body {
 	margin-bottom:0px!important;
 }
 .hap-playlist-selected {
-	float:left;
+	float:right;
 	color:#fff;
 	text-decoration: none; 
 	margin-left: 20px;
 	margin-right: 10px;
 }
 .hap-playlist-non-selected {
-	float:left;
+	float:right;
 	color:#ccc;
 	text-decoration: none; 
 	margin-left: 20px;
