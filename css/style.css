@@ -238,6 +238,7 @@ body {
 	text-decoration: none; 
 	margin-left: 20px;
 	margin-right: 10px;
+	direction: rtl;
 }
 .hap-playlist-non-selected {
 	float:right;
@@ -245,6 +246,7 @@ body {
 	text-decoration: none; 
 	margin-left: 20px;
 	margin-right: 10px;
+	direction: rtl;
 }
 .hap-playlist-item.hap-active{
 	background: #955626!important;
@@ -253,12 +255,12 @@ body {
 	background:#af7243!important;
 }
 .hap-download, .hap-link, .hap-buy{
-	float:right;
+	float:left;
 	color:#ccc!important;
 	font-size: 16px!important;
 	width: 30px;
 	text-align: center;
-	margin-right: 15px;
+	margin-left: 15px;
 }
 .hap-download i, .hap-link i, .hap-buy i{
 	line-height:33px;
