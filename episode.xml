@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <data>
+    <li class="hap-playlist-item" data-type="audio" data-mp3="https://www.dropbox.com/s/6htfuyjlkkj4c88/25.mp3?raw=1" data-artist="پائولو کوئلیو" data-title="شام آخر" data-thumb="img/cover/default.png"></li>
+     <li class="hap-playlist-item" data-type="audio" data-mp3="https://www.dropbox.com/s/zoy1ynxh4dum4o1/24.mp3?raw=1" data-artist="محمدحسین محمودزاده" data-title="سفر به اوگاندا" data-thumb="img/cover/default.png"></li>
+    <li class="hap-playlist-item" data-type="audio" data-mp3="https://www.dropbox.com/s/4c0w6sq8krthgfd/23.mp3?raw=1" data-artist="بدون شماره" data-title="ویژه شب یلدا" data-thumb="img/cover/default.png"></li>
+    <li class="hap-playlist-item" data-type="audio" data-mp3="https://www.dropbox.com/s/bw72oso5d6d8cs6/21.mp3?raw=1" data-artist="آزاده رحیمی" data-title="مکاره صدا و رنگ" data-thumb="img/cover/default.png"></li>
     <li class="hap-playlist-item" data-type="audio" data-mp3="https://www.dropbox.com/s/z5k3omv227clx1z/20.mp3?raw=1" data-artist="زویا پیرزاد" data-title="راحله و اطلسی‌هایش" data-thumb="img/cover/default.png"></li>
     <li class="hap-playlist-item" data-type="audio" data-mp3="https://www.dropbox.com/s/nw839agp9vz3mug/19.mp3?raw=1" data-artist="محمدحسین محمودزاده" data-title="روایتی از سفر روسیه" data-thumb="img/cover/default.png"></li>
     <li class="hap-playlist-item" data-type="audio" data-mp3="https://www.dropbox.com/s/ey9us3jgdpmcqaf/18.mp3?raw=1" data-artist="پویا عباسی" data-title="عمو طوسی" data-thumb="img/cover/default.png"></li>
