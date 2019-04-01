@@ -48,10 +48,10 @@
                 soundCloudAppId: "",
                 usePlaylistScroll: true,
                 playlistScrollOrientation: "vertical",
-                playlistScrollTheme: "minimal",
+                playlistScrollTheme: "rounded",
                 useTooltips: true,
                 useKeyboardNavigationForPlayback: true,
-                useDownload: false,
+                useDownload: true,
                 autoReuseDownloadMail: true,
                 useShare: false,
                 facebookAppId: "",
@@ -71,6 +71,7 @@
     <div id="hap-wrapper">
         <div class="hap-player-thumb"></div>
         <div class="hap-player-holder">
+            
             <div class="hap-player-controls">
                 <div class="hap-prev-toggle hap-contr-btn"><i class="fa fa-step-backward hap-contr-btn-i hap-icon-color"></i></div>
                 <div class="hap-playback-toggle hap-contr-btn"><i class="fa fa-play hap-contr-btn-i hap-icon-color"></i></div>
@@ -81,9 +82,16 @@
                         <div class="hap-volume-drag"></div>
                     </div>
                 </div>
+                <p class="hap-media-time-total">0:00</p>
+                <p class="hap-media-time-separator">&#47;</p>
+                <p class="hap-media-time-current">0:00</p>
+                <div class="hap-media-title-mask">
+                        <div class="hap-media-title">Artist&nbsp;Name&nbsp;-&nbsp;Song&nbsp;Title</div>
+                   </div>
                 <div class="hap-loop-toggle hap-contr-btn hap-tooltip-item" data-tooltip="Loop"><i class="fa fa-refresh hap-contr-btn-i hap-icon-color"></i></div>
                 <div class="hap-random-toggle hap-contr-btn hap-tooltip-item" data-tooltip="Shuffle"><i class="fa fa-random hap-contr-btn-i hap-icon-color"></i></div>
             </div>
+           
             <div class="hap-seekbar-inner hap-tooltip-item">
                 <div class="hap-progress-bg"></div>
                 <div class="hap-load-level"></div>
