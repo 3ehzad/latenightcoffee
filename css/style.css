@@ -435,6 +435,12 @@ body {
 .hap-playlist-content {
     margin-bottom: 100px;
 }
+.copyright {
+    color: #9e8b85;
+    text-align: center;
+    font-size: 11px;
+    padding: 5px;
+}
 @media (max-width: 600px) {
 	#hap-wrapper {
 		top: 0px;
