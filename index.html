@@ -81,6 +81,14 @@
             hap_player = $("#hap-wrapper").hap(settings);
         });
     </script>
+    <script>if ('serviceWorker' in navigator){
+    	window.addEventListener('load',() => {
+    		navigator.serviceWorker.register('/js/sw.js')
+    		.catch(err => {
+    			console.log('Register Failed', err);
+    		});
+    	});
+    }</script>
 </head>
 
 <body>
